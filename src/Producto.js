@@ -1,0 +1,1 @@
+/*Definir a producto como clase*/
