@@ -1,22 +1,51 @@
 /*Definir a producto como clase*/
-let NombreProducto=
+
+let producto =
 {
- nombreProducto:""
+ nombreProducto:"",
+ precioProducto:0,
+ nombreLocal: ""
 }
-let PrecioProducto = 
+let Productos = [];
+document.getElementById("RegistroProducto").onclick = () =>
 {
- precioProducto: 0
-}
-let NombreComercio = 
+    /*producto.precioProducto = Number(document.getElementById("PrecioProducto").value);
+    producto.nombreProducto = document.getElementById("NombreProducto").value;
+    producto.nombreLocal = document.getElementById("NombreComercio").value;
+*/
+    //guardarProductos(producto);
+    const precio = document.getElementById("PrecioProducto").value;
+    const nombre =  document.getElementById("NombreProducto").value;
+    const local = document.getElementById("NombreComercio").value;
+    Productos.push({nombre,precio,local});
+    //console.log(Productos.producto.precio);
+
+    document.getElementById("PrecioProducto").value = "";
+    document.getElementById("NombreProducto").value = "";
+    document.getElementById("NombreComercio").value = "";
+    
+            console.log(nombre);
+            console.log("$"+precio);
+            console.log(local);
+
+/*Productos.forEach(function(elementos)
 {
-    nombreComercio:""
-}
-const AlmacenProducto = [];
-AlmacenProducto.push(NombreProducto);
-AlmacenProducto.push(precioProducto);
-AlmacenProducto.push(nombreComercio);
+    console.log(elementos.precio);
+});*/
+
+};
+
+document.getElementById("enlistar").onclick = () =>
+{
+    Productos.forEach(function(elementos)
+{
+    console.log(elementos.precio);
+    
+});
+};
 
 
-document.getElementById("NombreProducto").innerHTML = AlmacenProducto [0].NombreComercio;
-document.getElementById("PrecioProducto").innerHTML = AlmacenProducto [0].NombreProducto;
-document.getElementById("NombreComercio").innerHTML = AlmacenProducto [0].NombreComercio;
+/*function guardarProductos(producto)
+{
+    producto.push(Productos);
+};*/
